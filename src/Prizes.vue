@@ -20,11 +20,12 @@ export default {
   methods: {
     async fetchPrizes() {
       try {
-        const response = await axios.get(' http://api.nobelprize.org/v1/prize.json');
+        const response = await axios.get(' http://api.nobelprize.org/v1/prize.json',);
         this.prizes = toRaw(response.data.prizes);
         this.filterData();
       } catch (error) {
         console.error(error);
+        alert(error.message)
       }
     },
     filterData() {
